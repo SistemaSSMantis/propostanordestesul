@@ -3,16 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proposta Comercial - Nordeste Sul Turismo</title>
+    <title>Proposta Comercial | Nordeste Sul Turismo</title>
+    <!-- Fontes Premium -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <!-- Ícones minimalistas -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
     <style>
         :root {
-            --bg-color: #050505;
-            --surface-color: #111111;
-            --text-main: #F5F5F7;
-            --text-muted: #A1A1A6;
-            --accent-color: #D4AF37; /* Subtle Gold */
+            --bg-color: #000000;
+            --surface-color: #0A0A0A;
+            --surface-hover: #141414;
+            --gold-primary: #D4AF37;
+            --gold-dark: #9e8022;
+            --text-main: #FFFFFF;
+            --text-muted: #8E8E93;
             --border-color: rgba(255, 255, 255, 0.08);
-            --font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * {
@@ -20,191 +29,354 @@
             padding: 0;
             box-sizing: border-box;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
-            font-family: var(--font-family);
-            line-height: 1.6;
-            display: flex;
-            justify-content: center;
-            padding: 2rem 1rem;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+            overflow-x: hidden;
         }
 
-        .container {
-            max-width: 700px;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 3rem;
-            animation: fadeIn 1.2s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        header {
+        /* --- HERO SECTION COM IMAGEM --- */
+        .hero {
+            position: relative;
+            padding: 8rem 2rem 6rem;
             text-align: center;
-            padding-bottom: 2rem;
+            background-image: linear-gradient(to bottom, rgba(0,0,0,0.4), var(--bg-color)), url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
             border-bottom: 1px solid var(--border-color);
-            margin-bottom: 1rem;
         }
 
-        .tag {
+        .hero-tag {
             font-size: 0.75rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--accent-color);
+            letter-spacing: 3px;
+            color: var(--gold-primary);
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             display: inline-block;
         }
 
-        h1 {
-            font-size: 2.2rem;
-            font-weight: 400;
-            letter-spacing: -0.5px;
-            margin-bottom: 0.5rem;
-            color: #FFFFFF;
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            font-weight: 400;
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 600;
+            line-height: 1.1;
             margin-bottom: 1rem;
-            color: #FFFFFF;
         }
 
-        p {
+        .hero p {
             color: var(--text-muted);
-            font-size: 1.05rem;
-            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        .section-box {
-            background-color: var(--surface-color);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 2.5rem;
+        /* --- CONTAINERS & SEÇÕES --- */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
-        .highlight-text {
-            color: var(--text-main);
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: var(--gold-primary);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
             font-weight: 500;
         }
 
-        ul {
-            list-style: none;
-            margin-top: 1.5rem;
+        /* --- GRID DE CARDS (O Que Será Implementado / Diferencial) --- */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
         }
 
-        li {
-            padding: 1rem 0;
-            border-bottom: 1px solid var(--border-color);
-            display: flex;
-            flex-direction: column;
-            gap: 0.25rem;
+        .card {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            transition: var(--transition);
+            text-align: left;
+            position: relative;
+            overflow: hidden;
         }
 
-        li:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
+        .card:hover {
+            transform: translateY(-5px);
+            background-color: var(--surface-hover);
+            border-color: rgba(212, 175, 55, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
-        .price-title {
-            font-size: 0.9rem;
+        .card i {
+            font-size: 2.5rem;
+            color: var(--gold-primary);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+            color: #FFF;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* --- PREÇOS --- */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .pricing-card {
+            background: linear-gradient(145deg, var(--surface-color), #050505);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .pricing-card:hover {
+            border-color: var(--gold-primary);
+        }
+
+        .price-label {
+            color: var(--gold-primary);
+            font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--accent-color);
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            font-weight: 600;
         }
 
         .price-value {
-            font-size: 1.4rem;
-            font-weight: 400;
-            color: #FFFFFF;
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            color: #FFF;
         }
 
-        .price-desc {
+        .price-subtext {
             font-size: 0.9rem;
             color: var(--text-muted);
+            margin-bottom: 2rem;
+            display: block;
         }
 
-        .guarantee-box {
-            border: 1px solid var(--accent-color);
-            background: linear-gradient(180deg, rgba(212, 175, 55, 0.05) 0%, rgba(17, 17, 17, 0) 100%);
+        /* --- GARANTIA --- */
+        .guarantee {
+            background-color: #0A0802;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 5rem 2rem;
             text-align: center;
         }
 
-        .guarantee-box h2 {
-            color: var(--accent-color);
+        .guarantee i {
+            font-size: 3rem;
+            color: var(--gold-primary);
+            margin-bottom: 1rem;
         }
 
+        .guarantee h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--gold-primary);
+            margin-bottom: 1rem;
+        }
+
+        .guarantee p {
+            color: #EBEBEB;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* --- CTA / PRÓXIMO PASSO --- */
+        .cta-section {
+            text-align: center;
+            padding: 6rem 2rem;
+            background: radial-gradient(circle at center, rgba(212, 175, 55, 0.05) 0%, var(--bg-color) 70%);
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background-color: var(--gold-primary);
+            color: #000;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .btn-whatsapp:hover {
+            transform: scale(1.05);
+            background-color: #F3CA46;
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-whatsapp i {
+            font-size: 1.5rem;
+        }
+
+        /* --- FOOTER --- */
         footer {
             text-align: center;
-            padding-top: 2rem;
-            font-size: 0.85rem;
-            color: var(--text-muted);
+            padding: 2rem;
             border-top: 1px solid var(--border-color);
-            margin-top: 1rem;
+            color: #555;
+            font-size: 0.8rem;
             letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
-        @media (max-width: 600px) {
-            h1 { font-size: 1.8rem; }
-            .section-box { padding: 1.5rem; }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .section { padding: 4rem 1.5rem; }
+            .price-value { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        
-        <header>
-            <span class="tag">Proposta Comercial</span>
-            <h1>Nordeste Sul Turismo</h1>
-        </header>
+    <!-- HERO -->
+    <header class="hero">
+        <span class="hero-tag">Proposta Executiva</span>
+        <h1>Nordeste Sul Turismo</h1>
+        <p>Inteligência Artificial e CRM de Alta Performance. O fim da perda de leads e o início da previsibilidade em vendas.</p>
+    </header>
 
-        <section class="section-box">
+    <!-- O QUE SERÁ IMPLEMENTADO -->
+    <section class="section">
+        <div class="section-header">
+            <p>O Escopo</p>
+            <h2>O Que Será Implementado</h2>
+        </div>
+        <div class="grid-3">
+            <div class="card">
+                <i class="ph ph-robot"></i>
+                <h3>Agente IA no WhatsApp</h3>
+                <p>Sistema inteligente respondendo 24/7. Atendimento imediato, sem espera e sem falhas humanas.</p>
+            </div>
+            <div class="card">
+                <i class="ph ph-funnel"></i>
+                <h3>Triagem e Qualificação</h3>
+                <p>O robô filtra curiosos. Sua equipe de vendas recebe e atende somente quem realmente quer comprar.</p>
+            </div>
+            <div class="card">
+                <i class="ph ph-database"></i>
+                <h3>CRM e Banco de Dados</h3>
+                <p>Controle total dos leads. Histórico estruturado e higienizado para futuras automações e disparos em massa.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIFERENCIAL -->
+    <section class="section">
+        <div class="section-header">
+            <p>A Vantagem Competitiva</p>
             <h2>O Diferencial Estratégico</h2>
-            <p>Implementação de um Agente de Inteligência Artificial operando diretamente no seu WhatsApp, integrado a um CRM de alta performance.</p>
-            <p><span class="highlight-text">O Foco:</span> Sua equipe atende somente quem realmente quer comprar. O agente realiza a triagem completa, qualificando os leads de forma automática e inteligente.</p>
-            <p><span class="highlight-text">O Futuro:</span> Você terá controle total sobre os leads. Todo o histórico formará um banco de dados higienizado e segmentado, estruturado com assertividade para os próximos passos de automação e disparos de mensagens em massa.</p>
-        </section>
+        </div>
+        <div class="grid-3" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));">
+            <div class="card">
+                <i class="ph ph-target"></i>
+                <h3>Assertividade Comercial</h3>
+                <p>Reduza o Custo de Aquisição (CAC). Direcione o tempo da sua equipe humana exclusivamente para o fechamento de vendas já aquecidas pela IA.</p>
+            </div>
+            <div class="card">
+                <i class="ph ph-rocket-launch"></i>
+                <h3>Preparo para o Futuro</h3>
+                <p>Não é apenas um chatbot. É a criação de um ativo de dados. Seu WhatsApp se torna uma máquina preparada para campanhas de remarketing precisas.</p>
+            </div>
+        </div>
+    </section>
 
-        <section class="section-box">
+    <!-- INVESTIMENTO -->
+    <section class="section">
+        <div class="section-header">
+            <p>Planejamento</p>
             <h2>Estrutura de Investimento</h2>
-            <p>Contrato de prestação de serviços com duração de 6 a 12 meses.</p>
-            
-            <ul>
-                <li>
-                    <span class="price-title">Implementação do Sistema (CRM + IA)</span>
-                    <span class="price-value">Entrada de R$ 1.500,00</span>
-                    <span class="price-desc">Saldo de R$ 2.000,00 diluído em 6 parcelas.</span>
-                </li>
-                <li>
-                    <span class="price-title">Licenciamento e Operação</span>
-                    <span class="price-value">R$ 1.500,00 / mês</span>
-                    <span class="price-desc">Valor referente ao suporte contínuo, manutenção, consumo de tokens e gastos operacionais da ferramenta de IA para garantir o atendimento no WhatsApp.</span>
-                </li>
-            </ul>
-        </section>
+        </div>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <span class="price-label">Setup e Implementação</span>
+                <div class="price-value">R$ 1.500 <span style="font-size: 1rem; color: #888;">entrada</span></div>
+                <span class="price-subtext">+ R$ 2.000 diluídos em 6 parcelas.</span>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Configuração total do CRM, treinamento da Inteligência Artificial e integração com o seu WhatsApp.</p>
+            </div>
+            <div class="pricing-card">
+                <span class="price-label">Licenciamento e Operação</span>
+                <div class="price-value">R$ 1.500 <span style="font-size: 1rem; color: #888;">/ mês</span></div>
+                <span class="price-subtext">Contrato de 6 a 12 meses.</span>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Cobre consumo de tokens da IA, manutenção dos servidores, atualizações e suporte técnico contínuo.</p>
+            </div>
+        </div>
+    </section>
 
-        <section class="section-box guarantee-box">
-            <h2>Garantia Incondicional de 7 Dias</h2>
-            <p class="highlight-text">Risco Zero para a sua operação.</p>
-            <p>Após a conclusão da implementação do sistema, você terá 7 dias de período de teste na prática.</p>
-            <p>Se o agente de inteligência artificial não funcionar como projetado, não entregar o desempenho combinado e o resultado não for o esperado, <span class="highlight-text">nós devolvemos integralmente o valor pago.</span></p>
-        </section>
+    <!-- GARANTIA -->
+    <section class="guarantee">
+        <i class="ph ph-shield-check"></i>
+        <h2>Garantia de 7 Dias</h2>
+        <p>Risco zero. Após a implementação, você tem 7 dias de teste prático. Se a IA não entregar a triagem combinada e o resultado esperado, devolvemos 100% do seu investimento inicial.</p>
+    </section>
 
-        <footer>
-            AGÊNCIA MANTIS &copy; 2026
-        </footer>
+    <!-- PRÓXIMO PASSO / CTA -->
+    <section class="cta-section">
+        <h2>O Próximo Passo</h2>
+        <p>Clique abaixo para aprovar a proposta comercial, validar as condições e iniciarmos o setup da sua operação.</p>
+        
+        <a href="https://api.whatsapp.com/send?phone=5521964666813&text=Ol%C3%A1!%20Aprovo%20a%20proposta%20comercial%20da%20Nordeste%20Sul%20Turismo%20e%20quero%20iniciar%20o%20setup." target="_blank" class="btn-whatsapp">
+            <i class="ph ph-whatsapp-logo"></i>
+            Aprovar e Iniciar Implementação
+        </a>
+    </section>
 
-    </div>
+    <!-- FOOTER -->
+    <footer>
+        Agência Mantis &copy; 2026 | Identidade Vendedora&trade;
+    </footer>
 
 </body>
 </html>
