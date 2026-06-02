@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposta Comercial - Nordeste Sul Turismo</title>
+    <style>
+        :root {
+            --bg-color: #050505;
+            --surface-color: #111111;
+            --text-main: #F5F5F7;
+            --text-muted: #A1A1A6;
+            --accent-color: #D4AF37; /* Subtle Gold */
+            --border-color: rgba(255, 255, 255, 0.08);
+            --font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-family);
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 700px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        header {
+            text-align: center;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 400;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.5rem;
+            color: #FFFFFF;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            color: #FFFFFF;
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-box {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2.5rem;
+        }
+
+        .highlight-text {
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        ul {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        li {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        li:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .price-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-color);
+        }
+
+        .price-value {
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: #FFFFFF;
+        }
+
+        .price-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .guarantee-box {
+            border: 1px solid var(--accent-color);
+            background: linear-gradient(180deg, rgba(212, 175, 55, 0.05) 0%, rgba(17, 17, 17, 0) 100%);
+            text-align: center;
+        }
+
+        .guarantee-box h2 {
+            color: var(--accent-color);
+        }
+
+        footer {
+            text-align: center;
+            padding-top: 2rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            margin-top: 1rem;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            .section-box { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <span class="tag">Proposta Comercial</span>
+            <h1>Nordeste Sul Turismo</h1>
+        </header>
+
+        <section class="section-box">
+            <h2>O Diferencial Estratégico</h2>
+            <p>Implementação de um Agente de Inteligência Artificial operando diretamente no seu WhatsApp, integrado a um CRM de alta performance.</p>
+            <p><span class="highlight-text">O Foco:</span> Sua equipe atende somente quem realmente quer comprar. O agente realiza a triagem completa, qualificando os leads de forma automática e inteligente.</p>
+            <p><span class="highlight-text">O Futuro:</span> Você terá controle total sobre os leads. Todo o histórico formará um banco de dados higienizado e segmentado, estruturado com assertividade para os próximos passos de automação e disparos de mensagens em massa.</p>
+        </section>
+
+        <section class="section-box">
+            <h2>Estrutura de Investimento</h2>
+            <p>Contrato de prestação de serviços com duração de 6 a 12 meses.</p>
+            
+            <ul>
+                <li>
+                    <span class="price-title">Implementação do Sistema (CRM + IA)</span>
+                    <span class="price-value">Entrada de R$ 1.500,00</span>
+                    <span class="price-desc">Saldo de R$ 2.000,00 diluído em 6 parcelas.</span>
+                </li>
+                <li>
+                    <span class="price-title">Licenciamento e Operação</span>
+                    <span class="price-value">R$ 1.500,00 / mês</span>
+                    <span class="price-desc">Valor referente ao suporte contínuo, manutenção, consumo de tokens e gastos operacionais da ferramenta de IA para garantir o atendimento no WhatsApp.</span>
+                </li>
+            </ul>
+        </section>
+
+        <section class="section-box guarantee-box">
+            <h2>Garantia Incondicional de 7 Dias</h2>
+            <p class="highlight-text">Risco Zero para a sua operação.</p>
+            <p>Após a conclusão da implementação do sistema, você terá 7 dias de período de teste na prática.</p>
+            <p>Se o agente de inteligência artificial não funcionar como projetado, não entregar o desempenho combinado e o resultado não for o esperado, <span class="highlight-text">nós devolvemos integralmente o valor pago.</span></p>
+        </section>
+
+        <footer>
+            AGÊNCIA MANTIS &copy; 2026
+        </footer>
+
+    </div>
+
+</body>
+</html>
